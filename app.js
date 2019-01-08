@@ -22,7 +22,7 @@ app.set('view engine', 'pug');
 app.use(require('./cors'));
 
 app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, '/public')));
 
 // Data accessible in all views
 app.locals.baseUrl = config.baseUrl;
