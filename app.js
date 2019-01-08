@@ -32,15 +32,6 @@ if (app.get('env') !== 'production') {
   app.use(morgan('dev'));
 }
 
-// ======================
-// ======= ROUTES =======
-// ======================
-const apiRoutes = require('./api-routes/index');
-const storeRoutes = require('./store-routes/index');
-
-app.use('/api', apiRoutes);
-app.use('/store', storeRoutes);
-
 // catch 404 and forward to error handler
 app.use((req, res, next) => {
   const err = new Error('Not Found');
