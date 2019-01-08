@@ -34,10 +34,10 @@ if (app.get('env') !== 'production') {
 
 // secure against DDoS
 app.use((req, res, next) => {
-  if (req.body.length > 255) {
+  if (req.body.length > 128) {
     res.status(500);
     res.json({
-      message: "too much data",
+      message: "too much data, please stop requesting",
       error: "broke"
     });
   }
