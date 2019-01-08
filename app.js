@@ -18,9 +18,6 @@ const config = require('./config')[env];
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
 
-// Allow cross site scripting (reconsider this for serious production)
-app.use(require('./cors'));
-
 app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(express.static(path.join(__dirname, 'public')));
 
