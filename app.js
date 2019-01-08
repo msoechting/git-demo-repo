@@ -32,6 +32,17 @@ if (app.get('env') !== 'production') {
   app.use(morgan('dev'));
 }
 
+// secure against DDoS
+app.use((req, res, next) => {
+  if (req.body.length > 255) {
+    res.status(500);
+    res.json({
+      message: "too much data",
+      error: "broke"
+    });
+  }
+});
+
 // catch 404 and forward to error handler
 app.use((req, res, next) => {
   const err = new Error('Not Found');
