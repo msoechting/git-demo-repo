@@ -5,7 +5,6 @@ const express = require('express');
 const path = require('path');
 const morgan = require('morgan');
 const favicon = require('serve-favicon');
-
 const app = express();
 const env = process.env.NODE_ENV || 'development';
 const config = require('./config')[env];
@@ -13,7 +12,6 @@ const config = require('./config')[env];
 // =======================
 // ==== CONFIGURATION ====
 // =======================
-
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
